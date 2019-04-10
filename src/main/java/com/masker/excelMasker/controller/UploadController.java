@@ -49,6 +49,7 @@ public class UploadController {
 	        headers.add("filename", file.getOriginalFilename());
 	        headers.add("Content-Type", "multipart/form-data");
 	    
+	    service.clearAll();
 	     return ResponseEntity
 	                  .ok()
 	                  .headers(headers)

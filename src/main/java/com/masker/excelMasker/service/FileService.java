@@ -41,7 +41,6 @@ public class FileService {
 		if (!selectedColumnHeaders.isEmpty()) { columnHeaderIndex.keySet().retainAll(selectedColumnHeaders); }
 		sheet.forEach(row -> {
 				columnHeaderIndex.forEach((name, index) -> {
-					//row.getCell(index).setCellValue((double) maskvalue(row.getCell(index)));//call maskString, maskNumeric
 					Cell cell = row.getCell(index);
 					if(cell != null) maskvalue(cell);//call maskString, maskNumeric
 				}); 
@@ -72,4 +71,8 @@ public class FileService {
         return cell;
 	}
 	
+	public void clearAll() {
+		workbook = null;
+		sheet = null;
+	}
 }
